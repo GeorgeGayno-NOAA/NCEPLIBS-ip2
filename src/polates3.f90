@@ -369,7 +369,7 @@
              IF(LI(NX,K).OR.IBI(K).EQ.0) THEN
                GO(N,K)=GI(NX,K)
                LO(N,K)=.TRUE.
-               GOTO 99              
+               CYCLE N_LOOP
              ENDIF
            ENDIF
          ENDDO SPIRAL_LOOP
@@ -383,7 +383,6 @@
        IBO(K)=1
        GO(N,K)=0.
      ENDIF
- 99  CONTINUE 
    ENDDO N_LOOP
 !$OMP END PARALLEL DO
  ENDDO KM_LOOP

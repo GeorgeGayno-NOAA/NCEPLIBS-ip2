@@ -60,9 +60,9 @@ set -x
    FFLAGS4="$I4R4 $FFLAGS ${MODPATH}$ip2Inc4"
    collect_info ip2 4 OneLine4 LibInfo4
    ip2Info4=ip2_info_and_log4.txt
-   $debg && make debug CPPDEFS="-DLSIZE=4" FFLAGS="$FFLAGS4" LIB=$ip2Lib4 \
+   $debg && make debug CPPDEFS="-DLSIZE=4 -DUSE_SPECTRAL=1" FFLAGS="$FFLAGS4" LIB=$ip2Lib4 \
                                                              &> $ip2Info4 \
-         || make build CPPDEFS="-DLSIZE=4" FFLAGS="$FFLAGS4" LIB=$ip2Lib4 \
+         || make build CPPDEFS="-DLSIZE=4 -DUSE_SPECTRAL=1" FFLAGS="$FFLAGS4" LIB=$ip2Lib4 \
                                                              &> $ip2Info4
    make message MSGSRC="$(gen_cfunction $ip2Info4 OneLine4 LibInfo4)" LIB=$ip2Lib4
 
@@ -74,9 +74,9 @@ set -x
    FFLAGS8="$I8R8 $FFLAGS ${MODPATH}$ip2Inc8"
    collect_info ip2 8 OneLine8 LibInfo8
    ip2Info8=ip2_info_and_log8.txt
-   $debg && make debug CPPDEFS="-DLSIZE=8" FFLAGS="$FFLAGS8" LIB=$ip2Lib8 \
+   $debg && make debug CPPDEFS="-DLSIZE=8 -DUSE_SPECTRAL=1" FFLAGS="$FFLAGS8" LIB=$ip2Lib8 \
                                                              &> $ip2Info8 \
-         || make build CPPDEFS="-DLSIZE=8" FFLAGS="$FFLAGS8" LIB=$ip2Lib8 \
+         || make build CPPDEFS="-DLSIZE=8 -DUSE_SPECTRAL=1" FFLAGS="$FFLAGS8" LIB=$ip2Lib8 \
                                                              &> $ip2Info8
    make message MSGSRC="$(gen_cfunction $ip2Info8 OneLine8 LibInfo8)" LIB=$ip2Lib8
 
@@ -88,9 +88,9 @@ set -x
    FFLAGSd="$I4R8 $FFLAGS ${MODPATH}$ip2Incd"
    collect_info ip2 d OneLined LibInfod
    ip2Infod=ip2_info_and_logd.txt
-   $debg && make debug CPPDEFS="-DLSIZE=D" FFLAGS="$FFLAGSd" LIB=$ip2Libd \
+   $debg && make debug CPPDEFS="-DLSIZE=D -DUSE_SPECTRAL=1" FFLAGS="$FFLAGSd" LIB=$ip2Libd \
                                                              &> $ip2Infod \
-         || make build CPPDEFS="-DLSIZE=D" FFLAGS="$FFLAGSd" LIB=$ip2Libd \
+         || make build CPPDEFS="-DLSIZE=D -DUSE_SPECTRAL=1" FFLAGS="$FFLAGSd" LIB=$ip2Libd \
                                                              &> $ip2Infod
    make message MSGSRC="$(gen_cfunction $ip2Infod OneLined LibInfod)" LIB=$ip2Libd
 

@@ -3,8 +3,8 @@ SHELL=/bin/sh
 SRCS_m  = $(filter-out gdswzd_mod.f90, $(wildcard gdswzd_*_mod.f90)) \
           gdswzd_mod.f90
 SRCS_f  = $(SRCS_m) $(filter-out $(SRCS_m), $(wildcard *.f90))
-SRCS    = $(SRCS_f) gdswzd_c.F90
-OBJS    = $(patsubst %.f90, %.o, $(SRCS_f)) gdswzd_c.o
+SRCS    = $(SRCS_f) gdswzd_c.F90 ipolates.F90 ipolatev.F90
+OBJS    = $(patsubst %.f90, %.o, $(SRCS_f)) gdswzd_c.o ipolates.o ipolatev.o
 
 all: build
 
